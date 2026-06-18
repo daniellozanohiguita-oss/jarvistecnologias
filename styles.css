@@ -281,3 +281,23 @@ footer {
         font-size: 2rem;
     }
 }
+/* Efecto de brillo rojo al pasar el mouse por los productos */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(229, 9, 20, 0.2);
+    border-color: var(--rojo);
+}
+
+/* Estilo para que las imágenes de los productos no se deformen */
+.card-img img {
+    transition: transform 0.3s ease;
+}
+.card:hover .card-img img {
+    transform: scale(1.05); /* Hace un pequeño zoom muy elegante */
+}
+
+/* Ajuste de títulos para que se vean más premium */
+.logo h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+}
