@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jarvis Tecnologías | Tienda y Soporte Técnico</title>
-    <!-- Google Fonts & FontAwesome para Iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Jarvis Tecnologías | Tienda Avanzada de Hardware</title>
+    <!-- Fuentes y Iconos Modernos -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-principal: #0a0a0a;
-            --bg-secundario: #141414;
+            --bg-principal: #050505;
+            --bg-secundario: #0f0f0f;
+            --bg-tarjeta: #161616;
             --rojo-jarvis: #e50914;
-            --rojo-hover: #b20710;
+            --rojo-brillante: #ff1e27;
             --blanco: #ffffff;
-            --gris-texto: #cccccc;
-            --gris-oscuro: #222222;
+            --gris-texto: #b3b3b3;
+            --border-color: #262626;
         }
 
         * {
@@ -33,19 +34,19 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR CON LOGO DESTACADO --- */
         header {
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(5, 5, 5, 0.95);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             border-bottom: 2px solid var(--rojo-jarvis);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -56,203 +57,259 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
-            color: var(--blanco);
         }
 
         .logo img {
-            height: 40px;
+            height: 65px; /* Logo más grande y protagonista */
             width: auto;
             object-fit: contain;
-        }
-
-        .logo span {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--blanco);
-        }
-
-        .logo span span {
-            color: var(--rojo-jarvis);
+            filter: drop-shadow(0 0 4px rgba(229, 9, 20, 0.3));
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-menu a {
             text-decoration: none;
             color: var(--gris-texto);
-            font-weight: 600;
-            font-size: 15px;
+            font-weight: 700;
+            font-size: 14px;
             transition: color 0.3s;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-menu a:hover, .nav-menu a.active {
             color: var(--rojo-jarvis);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO CON LOGO GIGANTE --- */
         .hero {
-            height: 70vh;
-            min-height: 500px;
-            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=1600') no-repeat center center/cover;
+            min-height: 85vh;
+            background: linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.98)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 20px;
-            margin-top: 70px;
+            padding: 120px 20px 60px 20px;
+        }
+
+        .hero-content .main-logo-view {
+            max-width: 320px;
+            height: auto;
+            margin-bottom: 25px;
+            animation: pulse 3s infinite alternate;
+            filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.6));
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.4)); }
+            100% { transform: scale(1.03); filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.7)); }
         }
 
         .hero-content h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .hero-content h1 span {
             color: var(--rojo-jarvis);
-            text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--gris-texto);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
         }
 
-        .btn-principal {
-            display: inline-block;
-            background-color: var(--rojo-jarvis);
-            color: var(--blanco);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn-principal:hover {
-            background-color: var(--rojo-hover);
-            transform: translateY(-2px);
-        }
-
-        /* --- SECCIONES GENERALES --- */
+        /* --- SECCIÓN PRINCIPAL DE CATEGORÍAS --- */
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         .titulo-seccion {
             font-family: 'Orbitron', sans-serif;
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            position: relative;
+            letter-spacing: 2px;
         }
 
-        .titulo-seccion::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--rojo-jarvis);
-            margin: 10px auto 0 auto;
+        .titulo-seccion span {
+            color: var(--rojo-jarvis);
         }
 
-        /* --- FILTROS DE TIENDA --- */
-        .filtros-categorias {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn-filtro {
-            background-color: var(--bg-secundario);
-            color: var(--blanco);
-            border: 1px solid var(--gris-oscuro);
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .btn-filtro:hover, .btn-filtro.activo {
-            background-color: var(--rojo-jarvis);
-            border-color: var(--rojo-jarvis);
-        }
-
-        /* --- GRILLA DE PRODUCTOS --- */
-        .productos-grid {
+        .grid-categorias-principales {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .producto-card {
-            background-color: var(--bg-secundario);
-            border: 1px solid var(--gris-oscuro);
+        .categoria-card-principal {
+            background-color: var(--bg-tarjeta);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        .categoria-card-principal:hover {
+            transform: translateY(-8px);
+            border-color: var(--rojo-jarvis);
+            box-shadow: 0 10px 20px rgba(229, 9, 20, 0.15);
+        }
+
+        .categoria-img-wrap {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .categoria-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .categoria-card-principal:hover .categoria-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        /* Tonalidades de color acorde: Capa roja oscura sobre imágenes */
+        .categoria-img-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent, rgba(5,5,5,0.9));
+        }
+
+        .categoria-info-principal {
+            padding: 25px;
+        }
+
+        .categoria-info-principal h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .categoria-info-principal h3 i {
+            color: var(--rojo-jarvis);
+            font-size: 1.2rem;
+        }
+
+        .categoria-info-principal p {
+            color: var(--gris-texto);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* --- SECCIÓN DETALLE (VENTANA SUB-CATÁLOGO INTERNO SPA) --- */
+        .seccion-interna {
+            display: none; /* Oculto por defecto */
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-regresar {
+            background: none;
+            border: 1px solid var(--rojo-jarvis);
+            color: var(--blanco);
+            padding: 10px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-regresar:hover {
+            background-color: var(--rojo-jarvis);
+        }
+
+        .grid-subproductos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .subproducto-card {
+            background-color: var(--bg-secundario);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        .producto-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--rojo-jarvis);
-        }
-
-        .producto-img {
+        .subproducto-img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid var(--gris-oscuro);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .producto-info {
+        .subproducto-info {
             padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .producto-cat {
-            font-size: 12px;
-            color: var(--rojo-jarvis);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .producto-titulo {
+        .subproducto-titulo {
             font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--blanco);
         }
 
-        .producto-desc {
-            font-size: 14px;
-            color: var(--gris-texto);
+        /* Características detalladas */
+        .specs-lista {
+            list-style: none;
             margin-bottom: 20px;
-            line-height: 1.4;
+        }
+
+        .specs-lista li {
+            font-size: 13px;
+            color: var(--gris-texto);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .specs-lista li i {
+            color: var(--rojo-jarvis);
+            font-size: 11px;
         }
 
         .btn-cotizar {
@@ -260,13 +317,13 @@
             background-color: transparent;
             color: var(--blanco);
             border: 2px solid var(--rojo-jarvis);
-            padding: 10px;
+            padding: 12px;
             text-align: center;
             text-decoration: none;
             font-weight: 700;
             border-radius: 4px;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s;
             display: flex;
             align-items: center;
@@ -276,6 +333,7 @@
 
         .btn-cotizar:hover {
             background-color: var(--rojo-jarvis);
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
         }
 
         /* --- SERVICIOS A DOMICILIO --- */
@@ -291,11 +349,11 @@
 
         .servicio-card {
             background-color: var(--bg-principal);
-            border: 1px solid var(--gris-oscuro);
-            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            padding: 45px 30px;
             border-radius: 8px;
             text-align: center;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         .servicio-card:hover {
@@ -303,54 +361,58 @@
         }
 
         .servicio-icono {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--rojo-jarvis);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
         }
 
         .servicio-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
         }
 
         .servicio-card p {
             color: var(--gris-texto);
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        /* --- FOOTER e INFO --- */
+        /* --- FOOTER --- */
         footer {
-            background-color: #050505;
-            border-top: 1px solid var(--gris-oscuro);
-            padding: 40px 20px;
+            background-color: #020202;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 20px;
             text-align: center;
         }
 
         .footer-info {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--gris-texto);
             font-size: 14px;
-            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        .footer-info i {
+        .footer-info span i {
             color: var(--rojo-jarvis);
             margin-right: 8px;
         }
 
         .copyright {
             font-size: 13px;
-            color: #555555;
+            color: #444444;
         }
 
-        /* --- BOTÓN FLOTANTE WHATSAPP --- */
+        /* --- WHATSAPP FLOTANTE --- */
         .wpp-flotante {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 30px;
             background-color: #25d366;
             color: white;
             width: 60px;
@@ -359,223 +421,289 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 32px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             z-index: 999;
             text-decoration: none;
             transition: transform 0.3s;
         }
 
         .wpp-flotante:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(5deg);
         }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .nav-menu { display: none; } /* Simplificado para mantener código limpio */
-            .hero-content h1 { font-size: 2.2rem; }
+            .nav-menu { display: none; }
+            .hero-content h1 { font-size: 1.8rem; }
             .titulo-seccion { font-size: 1.6rem; }
+            .footer-info { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- WHATSAPP CONFIGURACIÓN (REEMPLAZA CON TU NÚMERO) -->
-    <!-- Formato: Código de país + número sin espacios. Ej: 573042421919 -->
+    <!-- REEMPLAZA CON TU NÚMERO DE WHATSAPP (Código país + número sin espacios) -->
     <script>
         const TELEFONO_WHATSAPP = "573042421919"; 
     </script>
 
-    <!-- HEADER / NAVBAR -->
+    <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
-                <!-- Si tienes logo.png en tu repo, se usará automáticamente, sino fallará elegantemente y se verá el texto -->
-                <img src="logo.jpeg" onerror="this.style.display='none'" alt="">
-                <span>JARVIS <span>TECNOLOGÍAS</span></span>
+            <a href="#" class="logo" onclick="mostrarInicio()">
+                <img src="logo.jpeg" onerror="this.src='https://via.placeholder.com/65x65/0f0f0f/e50914?text=J'" alt="Logo Jarvis">
             </a>
             <ul class="nav-menu">
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="#tienda">Tienda</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" class="active" onclick="mostrarInicio()">Inicio</a></li>
+                <li><a href="#catalogo" onclick="mostrarInicio()">Productos</a></li>
+                <li><a href="#servicios" onclick="mostrarInicio()">Servicios</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>HARDWARE DE ALTA <span>POTENCIA</span></h1>
-            <p>Los mejores componentes y servicio técnico especializado a domicilio en la comodidad de tu hogar u oficina.</p>
-            <a href="#tienda" class="btn-principal">Ver Catálogo</a>
-        </div>
-    </section>
+    <!-- CONTENIDO GENERAL DE LA WEB -->
+    <div id="vista-inicio">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <img src="logo.jpg" class="main-logo-view" onerror="this.style.display='none'" alt="Jarvis">
+                <h1>Jarvis <span>Tecnologías</span></h1>
+                <p>Tu aliado experto en hardware de alta gama y soporte de alto rendimiento. Explora componentes seleccionados bajo estrictos estándares técnicos o solicita mantenimiento inmediato en tu ubicación.</p>
+                <a href="#catalogo" class="btn-principal">Explorar Catálogos</a>
+            </div>
+        </section>
 
-    <!-- SECCIÓN TIENDA -->
-    <section class="container" id="tienda">
-        <h2 class="titulo-seccion">Catálogo de Productos</h2>
+        <!-- SECCIÓN DE CATEGORÍAS PRINCIPALES -->
+        <section class="container" id="catalogo">
+            <h2 class="titulo-seccion">Líneas de <span>Hardware</span></h2>
+            
+            <div class="grid-categorias-principales">
+                <!-- Categoria 1 -->
+                <div class="categoria-card-principal" onclick="abrirSubCatálogo('almacenamiento')">
+                    <div class="categoria-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=600" alt="Almacenamiento">
+                    </div>
+                    <div class="categoria-info-principal">
+                        <h3>RAM y Almacenamiento <i class="fas fa-microchip"></i></h3>
+                        <p>Memorias RAM de alta velocidad y unidades sólidas SSD NVMe de última generación en tonos oscuros y rojos. Potencia pura para tu sistema.</p>
+                    </div>
+                </div>
+
+                <!-- Categoria 2 -->
+                <div class="categoria-card-principal" onclick="abrirSubCatálogo('audio')">
+                    <div class="categoria-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600" alt="Audio">
+                    </div>
+                    <div class="categoria-info-principal">
+                        <h3>Audio y Periféricos <i class="fas fa-headphones"></i></h3>
+                        <p>Diademas pro-gamer, audífonos inalámbricos compactos y bafles potentes con un look agresivo y la mejor fidelidad sonora.</p>
+                    </div>
+                </div>
+
+                <!-- Categoria 3 -->
+                <div class="categoria-card-principal" onclick="abrirSubCatálogo('computadores')">
+                    <div class="categoria-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=600" alt="Computadores">
+                    </div>
+                    <div class="categoria-info-principal">
+                        <h3>Equipos de Segunda <i class="fas fa-laptop"></i></h3>
+                        <p>Laptops y computadores corporativos garantizados, limpios, optimizados a nivel técnico y listos para trabajar a máxima velocidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="servicios" id="servicios">
+            <div class="container">
+                <h2 class="titulo-seccion">Soporte Técnico a <span>Domicilio</span></h2>
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <div class="servicio-icono"><i class="fas fa-tools"></i></div>
+                        <h3>Mantenimiento de PCs</h3>
+                        <p>Optimización total del sistema, limpieza interna de componentes físicos, cambio de pasta térmica de alta calidad, formateo e instalación de software profesional.</p>
+                        <button class="btn-cotizar" onclick="enviarMensajeServicio('Computadores')"><i class="fab fa-whatsapp"></i> Solicitar Técnico</button>
+                    </div>
+
+                    <div class="servicio-card">
+                        <div class="servicio-icono"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Reparación de Celulares</h3>
+                        <p>Corrección de fallas físicas, cambio de pantallas y baterías en mal estado directamente en tu domicilio para que no detengas tu día a día.</p>
+                        <button class="btn-cotizar" onclick="enviarMensajeServicio('Celulares')"><i class="fab fa-whatsapp"></i> Solicitar Técnico</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SECCIÓN INTERNA DINÁMICA (SPA) -->
+    <div id="vista-detalle" class="seccion-interna container" style="margin-top: 90px;">
+        <button class="btn-regresar" onclick="mostrarInicio()"><i class="fas fa-arrow-left"></i> Volver al Catálogo Principal</button>
+        <h2 class="titulo-seccion" id="subcat-titulo">Categoría</h2>
         
-        <!-- Botones de Filtro -->
-        <div class="filtros-categorias">
-            <button class="btn-filtro activo" onclick="filtrarProductos('todos', this)">Todos</button>
-            <button class="btn-filtro" onclick="filtrarProductos('almacenamiento', this)">Almacenamiento</button>
-            <button class="btn-filtro" onclick="filtrarProductos('audio', this)">Audio</button>
-            <button class="btn-filtro" onclick="filtrarProductos('computadores', this)">Computadores</button>
+        <div class="grid-subproductos" id="subcat-productos-container">
+            <!-- Los subproductos con fotos y specs se inyectan dinámicamente aquí -->
         </div>
+    </div>
 
-        <!-- Grid de Productos -->
-        <div class="productos-grid" id="contenedor-productos">
-            <!-- Los productos se auto-generan limpiamente con JavaScript abajo -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-info">
+            <span><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</span>
+            <span><i class="fas fa-clock"></i> Lun a Sáb: 8:00 AM - 6:00 PM</span>
         </div>
-    </section>
-
-    <!-- SECCIÓN SERVICIOS -->
-    <section class="servicios" id="servicios">
-        <div class="container">
-            <h2 class="titulo-seccion">Servicio Técnico a Domicilio</h2>
-            <div class="servicios-grid">
-                
-                <!-- Computadores -->
-                <div class="servicio-card">
-                    <div class="servicio-icono"><i class="fas fa-desktop"></i></div>
-                    <h3>Reparación de Computadores</h3>
-                    <p>Mantenimiento preventivo y correctivo, formateo, instalación de software, cambio de pantallas, teclados y optimización extrema de velocidad para laptops y torres.</p>
-                    <button class="btn-cotizar" onclick="cotizarServicio('Computadores')"><i class="fab fa-whatsapp"></i> Agendar Servicio</button>
-                </div>
-
-                <!-- Celulares -->
-                <div class="servicio-card">
-                    <div class="servicio-icono"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Reparación de Celulares</h3>
-                    <p>Cambio de pantallas, baterías, puertos de carga y solución de problemas de sistema. Volvemos a la vida tu herramienta de trabajo sin que salgas de casa.</p>
-                    <button class="btn-cotizar" onclick="cotizarServicio('Celulares')"><i class="fab fa-whatsapp"></i> Agendar Servicio</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER / CONTACTO -->
-    <footer id="contacto">
-        <div class="container" style="padding: 20px 0;">
-            <div class="footer-info">
-                <p><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</p>
-                <p><i class="fas fa-envelope"></i> soporte@jarvistecnologias.com</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 6:00 PM</p>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Jarvis Tecnologías. Todos los derechos reservados.
-            </div>
-        </div>
+        <div class="copyright">&copy; 2026 Jarvis Tecnologías. Código Técnico Optimizado.</div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <!-- WHATSAPP GENERAL -->
     <a href="#" id="wpp-general" class="wpp-flotante" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- LÓGICA JAVASCRIPT -->
+    <!-- LÓGICA DE DATOS Y TRANSICIONES -->
     <script>
-        // CONFIGURACIÓN DE BASE DE DATOS DE PRODUCTOS (FÁCIL DE EDITAR O AGREGAR MÁS)
-        const productos = [
-            {
-                id: 1,
-                nombre: "Memoria RAM DDR4 Kingston Fury 8GB / 16GB",
-                categoria: "almacenamiento",
-                descripcion: "Mejora el rendimiento y la velocidad de tu PC o Laptop de inmediato con marcas líderes.",
-                imagen: "https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=500"
-            },
-            {
-                id: 2,
-                nombre: "Disco de Estado Sólido SSD NVMe Kingston 500GB / 1TB",
-                categoria: "almacenamiento",
-                descripcion: "Máxima velocidad de encendido y carga de programas. Hasta 10 veces más rápido que un disco mecánico.",
-                imagen: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=500"
-            },
-            {
-                id: 3,
-                nombre: "Memorias USB y Micro SD SanDisk Ultra",
-                categoria: "almacenamiento",
-                descripcion: "Almacenamiento portable y confiable de alta velocidad para tus archivos, cámaras y celulares.",
-                imagen: "https://images.unsplash.com/photo-1622533052601-bb1d86d26738?q=80&w=500"
-            },
-            {
-                id: 4,
-                nombre: "Diademas Gamer y Audífonos Bluetooth",
-                categoria: "audio",
-                descripcion: "Audio envolvente con micrófono integrado de alta fidelidad, perfectos para jugar o trabajar.",
-                imagen: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500"
-            },
-            {
-                id: 5,
-                nombre: "Bafles y Parlantes Portátiles Recargables",
-                categoria: "audio",
-                descripcion: "Excelente potencia de sonido y bajos profundos con conectividad Bluetooth de largo alcance.",
-                imagen: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=500"
-            },
-            {
-                id: 6,
-                nombre: "Computador Portátil Corporativo (Segunda)",
-                categoria: "computadores",
-                descripcion: "Equipos de marcas premium (Lenovo, Dell, HP) completamente revisados, optimizados y con garantía certificada.",
-                imagen: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=500"
-            }
-        ];
+        // BASE DE DATOS INTERNA CON ESPECIFICACIONES REALES E IMÁGENES ACORDE
+        const bdSubproductos = {
+            almacenamiento: [
+                {
+                    nombre: "Memoria RAM DDR4 Kingston Fury Beast / Corsair Vengeance",
+                    imagen: "https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=500",
+                    specs: [
+                        "Capacidades: 8GB, 16GB y 32GB módulos individuales",
+                        "Frecuencias: Optimizado a 3200MHz / 3600MHz",
+                        "Diseño: Disipador térmico de aluminio negro de bajo perfil",
+                        "Ideal para: Gaming extremo y multitarea pesada"
+                    ]
+                },
+                {
+                    nombre: "Unidad Sólida SSD M.2 NVMe PCIe Kingston / Crucial",
+                    imagen: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=500",
+                    specs: [
+                        "Almacenamiento: 500GB, 1TB y 2TB de alta densidad",
+                        "Velocidad: Lecturas brutales hasta 3500MB/s (Carga en segundos)",
+                        "Factor de forma: M.2 2280 compacto compatible con PC y Laptop",
+                        "Rendimiento: 10 veces más rápido que discos mecánicos normales"
+                    ]
+                },
+                {
+                    nombre: "Memorias USB 3.2 & Micro SD SanDisk Extreme Ultra",
+                    imagen: "https://images.unsplash.com/photo-1622533052601-bb1d86d26738?q=80&w=500",
+                    specs: [
+                        "Variedad: 32GB, 64GB, 128GB y 256GB de espacio",
+                        "Transferencia: USB 3.2 de alta velocidad para videos e información",
+                        "Clase Micro SD: Clase 10 A1 óptima para celulares y cámaras de acción",
+                        "Seguridad: Resistentes al agua y cambios térmicos"
+                    ]
+                }
+            ],
+            audio: [
+                {
+                    nombre: "Diademas Gamer Premium con Micrófono Pro",
+                    imagen: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=500",
+                    specs: [
+                        "Audio: Sonido envolvente espacial optimizado para shooters",
+                        "Micrófono: Cancelación de ruido integrada y brazo flexible",
+                        "Estética: Iluminación LED roja/RGB sobre chasis negro mate",
+                        "Confort: Almohadillas memory foam para largas sesiones"
+                    ]
+                },
+                {
+                    nombre: "Audífonos Inalámbricos Bluetooth In-Ear Sport",
+                    imagen: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=500",
+                    specs: [
+                        "Conectividad: Bluetooth 5.3 emparejamiento instantáneo",
+                        "Autonomía: Hasta 6 horas de reproducción continua + carga estuche",
+                        "Acústica: Bajos profundos reforzados para entrenamiento",
+                        "Control: Superficie táctil inteligente en cada auricular"
+                    ]
+                },
+                {
+                    nombre: "Bafles y Parlantes Portátiles Bluetooth TWS",
+                    imagen: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=500",
+                    specs: [
+                        "Potencia: Salida de sonido clara con radiadores pasivos de bajo",
+                        "Estructura: Chasis resistente a salpicaduras e impactos ligeros",
+                        "Batería: Celda recargable de larga duración (hasta 8 horas)",
+                        "Tecnología: Función TWS para emparejar dos bafles al tiempo"
+                    ]
+                }
+            ],
+            computadores: [
+                {
+                    nombre: "Portátil Corporativo Lenovo ThinkPad / Dell Latitude",
+                    imagen: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=500",
+                    specs: [
+                        "Procesador: Intel Core i5 / i7 de alto desempeño empresarial",
+                        "Configuración Base: 8GB/16GB RAM + Unidad SSD Nueva instalada",
+                        "Condición: Equipos de segunda seleccionados con rigurosa inspección",
+                        "Estado Físico: Excelente estética, batería certificada y garantía"
+                    ]
+                },
+                {
+                    nombre: "Torres y Computadores de Escritorio para Oficina y Comercio",
+                    imagen: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=500",
+                    specs: [
+                        "Gabinete: Factor de forma compacto, silencioso y eficiente",
+                        "Almacenamiento: Sistema operativo cargado en unidad sólida SSD",
+                        "Mantenimiento: Entrega con limpieza física interna profunda recién hecha",
+                        "Uso Recomendado: Ideal para teletrabajo, puntos de venta y estudio"
+                    ]
+                }
+            ]
+        };
 
-        // Renderizar productos en pantalla
-        function cargarProductos(lista) {
-            const contenedor = document.getElementById('contenedor-productos');
+        // LÓGICA DE NAVEGACIÓN SPA
+        function abrirSubCatálogo(categoria) {
+            document.getElementById('vista-inicio').style.display = 'none';
+            const vistaDetalle = document.getElementById('vista-detalle');
+            vistaDetalle.style.display = 'block';
+            
+            // Cambiar título de la ventana
+            const titulos = { almacenamiento: "RAM y Almacenamiento", audio: "Audio y Periféricos", computadores: "Computadores Seleccionados" };
+            document.getElementById('subcat-titulo').innerHTML = `Línea <span>${titulos[categoria]}</span>`;
+            
+            // Renderizar items
+            const contenedor = document.getElementById('subcat-productos-container');
             contenedor.innerHTML = '';
             
-            lista.forEach(prod => {
-                const mensajeWpp = encodeURIComponent(`Hola Jarvis Tecnologías, quiero cotizar el precio actual de: ${prod.nombre}`);
-                const linkWpp = `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensajeWpp}`;
+            bdSubproductos[categoria].forEach(item => {
+                let listaSpecsHtml = '';
+                item.specs.forEach(sp => {
+                    listaSpecsHtml += `<li><i class="fas fa-caret-right"></i> ${sp}</li>`;
+                });
 
-                const card = `
-                    <div class="producto-card" data-categoria="${prod.categoria}">
-                        <img src="${prod.imagen}" alt="${prod.nombre}" class="producto-img">
-                        <div class="producto-info">
-                            <span class="producto-cat">${prod.categoria}</span>
-                            <h3 class="producto-titulo">${prod.nombre}</h3>
-                            <p class="producto-desc">${prod.descripcion}</p>
+                const msgWpp = encodeURIComponent(`Hola Jarvis Tecnologías, me interesa cotizar el precio actual de: ${item.nombre}`);
+                const linkWpp = `https://wa.me/${TELEFONO_WHATSAPP}?text=${msgWpp}`;
+
+                const cardHtml = `
+                    <div class="subproducto-card">
+                        <img src="${item.imagen}" class="subproducto-img" alt="${item.nombre}">
+                        <div class="subproducto-info">
+                            <h3 class="subproducto-titulo">${item.nombre}</h3>
+                            <ul class="specs-lista">${listaSpecsHtml}</ul>
                             <a href="${linkWpp}" target="_blank" class="btn-cotizar">
-                                <i class="fab fa-whatsapp"></i> Cotizar precio actual
+                                <i class="fab fa-whatsapp"></i> Cotizar Precio Actual
                             </a>
                         </div>
                     </div>
                 `;
-                contenedor.innerHTML += card;
+                contenedor.innerHTML += cardHtml;
             });
+            window.scrollTo(0, 0);
         }
 
-        // Filtros de categoría interactivos
-        function filtrarProductos(categoria, boton) {
-            // Actualizar clase activa en los botones
-            document.querySelectorAll('.btn-filtro').forEach(btn => btn.classList.remove('activo'));
-            boton.classList.add('activo');
-
-            if(categoria === 'todos') {
-                cargarProductos(productos);
-            } else {
-                const filtrados = productos.filter(p => p.categoria === categoria);
-                cargarProductos(filtrados);
-            }
+        function mostrarInicio() {
+            document.getElementById('vista-detalle').style.display = 'none';
+            document.getElementById('vista-inicio').style.display = 'block';
         }
 
-        // Lógica para enviar mensaje de WhatsApp para servicio técnico
-        function cotizarServicio(tipoServicio) {
-            const mensaje = encodeURIComponent(`Hola Jarvis Tecnologías, solicito el servicio de Reparación a Domicilio para ${tipoServicio}. Me gustaría agendar una revisión.`);
-            window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, '_blank');
+        function enviarMensajeServicio(tipo) {
+            const msg = encodeURIComponent(`Hola Jarvis Tecnologías, requiero programar un servicio técnico a domicilio para: ${tipo}. Quedo atento a la disponibilidad.`);
+            window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${msg}`, '_blank');
         }
 
-        // Configurar botón de WhatsApp general (Esquina inferior derecha)
-        document.getElementById('wpp-general').href = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent('Hola Jarvis Tecnologías, requiero información general sobre productos o servicios.')}`;
-
-        // Carga inicial
-        window.onload = () => {
-            cargarProductos(productos);
-        };
+        // Ajustar link del botón flotante general
+        document.getElementById('wpp-general').href = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent('Hola Jarvis Tecnologías, me gustaría realizar una consulta general sobre componentes o soporte.')}`;
     </script>
 </body>
 </html>
