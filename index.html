@@ -68,10 +68,11 @@
         }
 
         .logo img {
-            height: 70px; /* Tamaño profesional e impactante */
+            height: 70px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(255, 30, 39, 0.2));
+            /* Sombra blanca sutil para el logo del menú superior */
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
             transition: transform 0.3s;
         }
 
@@ -134,15 +135,16 @@
             height: auto;
             margin-bottom: 20px;
             animation: floatAnimation 4s infinite ease-in-out;
-            filter: drop-shadow(0 0 35px rgba(229, 9, 20, 0.55));
+            /* Sombra blanca base */
+            filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.4));
         }
 
         @keyframes floatAnimation {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); filter: drop-shadow(0 0 45px rgba(255, 30, 39, 0.7)); }
+            /* Incrementa el brillo blanco cuando el logo sube */
+            50% { transform: translateY(-12px); filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.6)); }
             100% { transform: translateY(0px); }
         }
-
         .hero-content h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
