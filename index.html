@@ -173,13 +173,14 @@
         }
 
         .hero-content h1 span {
-            color: transparent;
-            -webkit-text-stroke: 1px var(--blanco);
-            background: linear-gradient(135deg, var(--blanco) 0%, var(--rojo-neon) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
+            color: var(--rojo-neon);
+            text-shadow: 0 0 20px rgba(255, 30, 39, 0.6);
+            /* Limpia las propiedades del degradado anterior */
+            -webkit-text-stroke: 0;
+            background: none;
+            background-clip: initial;
+            -webkit-background-clip: initial;
         }
-
         .hero-content p {
             font-size: 1.2rem;
             color: var(--gris-plata);
