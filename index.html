@@ -135,15 +135,32 @@
             height: auto;
             margin-bottom: 20px;
             animation: floatAnimation 4s infinite ease-in-out;
-            /* Sombra blanca base */
-            filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.4));
+            /* Triple sombra encadenada para máxima densidad blanca */
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) 
+                    drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) 
+                    drop-shadow(0 0 45px rgba(255, 255, 255, 0.5));
         }
 
         @keyframes floatAnimation {
-            0% { transform: translateY(0px); }
-            /* Incrementa el brillo blanco cuando el logo sube */
-            50% { transform: translateY(-12px); filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.6)); }
-            100% { transform: translateY(0px); }
+            0% { 
+                transform: translateY(0px); 
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) 
+                        drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) 
+                        drop-shadow(0 0 45px rgba(255, 255, 255, 0.5));
+            }
+            50% { 
+                transform: translateY(-12px); 
+                /* El resplandor se vuelve aún más denso e intenso en el punto más alto */
+                filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1)) 
+                        drop-shadow(0 0 30px rgba(255, 255, 255, 0.9)) 
+                        drop-shadow(0 0 60px rgba(255, 255, 255, 0.7)); 
+            }
+            100% { 
+                transform: translateY(0px); 
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) 
+                        drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) 
+                        drop-shadow(0 0 45px rgba(255, 255, 255, 0.5));
+            }
         }
         .hero-content h1 {
             font-family: 'Orbitron', sans-serif;
